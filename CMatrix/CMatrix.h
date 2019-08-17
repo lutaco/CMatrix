@@ -5,6 +5,8 @@
 #define ZEROS 2 // Матрица с нулевыми элементами
 #define EMPTY 3 // Мартица с неинициализированными элементами
 
+#include <iostream>
+
 class Matrix {
 private:
     int w; // Ширина матрицы
