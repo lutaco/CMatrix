@@ -5,7 +5,7 @@
 
 Matrix::Matrix() {
 	w = h = 0;
-	A = NULL;
+	A = nullptr;
 };
 
 Matrix Matrix::refresh(int k, int max) {
@@ -22,6 +22,7 @@ double* Matrix::get_array() {
 	memcpy(res, A, sizeof(double) * w * h);
 	return res;
 }
+
 Matrix::Matrix(int rows, int columns, int type = EMPTY) : h(rows), w(columns) { 
 	A = new double[w * h];
 
@@ -167,3 +168,12 @@ Matrix Matrix::slice(int y0, int y1, int x0 = 0, int x1 = 0) {
 
 	return T;
 };	
+
+
+int Matrix::get_rows() { return h; };
+
+
+int Matrix::get_cols() { return w; };
+
+
+Matrix::~Matrix() { delete []A; };
